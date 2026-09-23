@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Syafara Azra Putri Ivana | Portfolio</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fff8f5;
+            color: #4b4140;
+            line-height: 1.7;
+        }
+
+        /* =========================
+           NAVIGASI
+        ========================= */
+
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 7%;
+            background-color: rgba(255, 248, 245, 0.95);
+            border-bottom: 1px solid #f0dcdc;
+        }
+
+        .logo {
+            font-family: Georgia, serif;
+            font-size: 20px;
+            font-weight: bold;
+            color: #b96872;
+        }
+
+        .menu {
+            display: flex;
+            gap: 25px;
+        }
+
+        .menu a {
+            text-decoration: none;
+            color: #5b4b4a;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        .menu a:hover {
+            color: #b96872;
+        }
+
+
+        /* =========================
+           HALAMAN TENTANG SAYA
+        ========================= */
+
+        .tentang {
+            min-height: 100vh;
+            padding: 80px 8%;
+        }
+
+        .judul {
+            text-align: center;
+            margin-bottom: 65px;
+        }
+
+        .judul h1 {
+            font-family: Georgia, serif;
+            font-size: 55px;
+            color: #b96872;
+            margin-bottom: 8px;
+        }
+
+        .judul p {
+            color: #927c7a;
+            font-style: italic;
+        }
+
+
+        /* =========================
+           BAGIAN UTAMA
+        ========================= */
+
+        .isi-tentang {
+            max-width: 1100px;
+            margin: auto;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 70px;
+        }
+
+
+        /* =========================
+           KOLEKSI FOTO
+        ========================= */
+
+        .koleksi-foto {
+            position: relative;
+            width: 450px;
+            height: 500px;
+            flex-shrink: 0;
+        }
+
+        .polaroid {
+            position: absolute;
+            background-color: white;
+            padding: 10px 10px 38px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+
+            transition: 0.3s ease;
+        }
+
+        .polaroid img {
+            width: 190px;
+            height: 230px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .polaroid:hover {
+            transform: scale(1.07) rotate(0deg);
+            z-index: 10;
+        }
+
+        .foto-satu {
+            top: 15px;
+            left: 30px;
+            transform: rotate(-8deg);
+        }
+
+        .foto-dua {
+            top: 70px;
+            right: 15px;
+            transform: rotate(7deg);
+        }
+
+        .foto-tiga {
+            bottom: 15px;
+            left: 105px;
+            transform: rotate(-3deg);
+        }
+
+
+        /* =========================
+           TEKS TENTANG SAYA
+        ========================= */
+
+        .deskripsi {
+            max-width: 520px;
+        }
+
+        .deskripsi h2 {
+            font-family: Georgia, serif;
+            font-size: 34px;
+            color: #b96872;
+            margin-bottom: 18px;
+        }
+
+        .deskripsi p {
+            margin-bottom: 17px;
+            color: #665856;
+        }
+
+
+        /* =========================
+           INFORMASI SINGKAT
+        ========================= */
+
+        .informasi {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 13px;
+            margin-top: 25px;
+        }
+
+        .kotak {
+            background-color: #f5dfdf;
+            padding: 15px;
+            border-radius: 15px;
+            font-size: 14px;
+        }
+
+        .kotak strong {
+            color: #a45d66;
+        }
+
+
+        /* =========================
+           KUTIPAN
+        ========================= */
+
+        .kutipan {
+            max-width: 750px;
+            margin: 80px auto 0;
+            text-align: center;
+
+            font-family: Georgia, serif;
+            font-size: 23px;
+            color: #a45d66;
+        }
+
+        .kutipan span {
+            display: block;
+            margin-top: 10px;
+
+            font-family: Arial, sans-serif;
+            font-size: 13px;
+            color: #927c7a;
+        }
+
+
+        /* =========================
+           BAGIAN FOTO SAYA
+        ========================= */
+
+        .galeri {
+            padding: 80px 8%;
+            background-color: #fff1ed;
+        }
+
+        .galeri-judul {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .galeri-judul h2 {
+            font-family: Georgia, serif;
+            font-size: 40px;
+            color: #b96872;
+        }
+
+        .galeri-judul p {
+            color: #927c7a;
+        }
+
+        .grid-foto {
+            max-width: 1000px;
+            margin: auto;
+
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .grid-foto img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 18px;
+
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+
+            transition: 0.3s;
+        }
+
+        .grid-foto img:hover {
+            transform: translateY(-7px);
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            background-color: #f5dfdf;
+            color: #765e5d;
+            font-size: 14px;
+        }
+
+
+        /* =========================
+           TAMPILAN HP
+        ========================= */
+
+        @media (max-width: 850px) {
+
+            nav {
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            .menu {
+                gap: 15px;
+            }
+
+            .isi-tentang {
+                flex-direction: column;
+            }
+
+            .koleksi-foto {
+                width: 100%;
+                max-width: 450px;
+            }
+
+            .deskripsi {
+                text-align: center;
+            }
+
+            .informasi {
+                text-align: left;
+            }
+
+            .grid-foto {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+
+        @media (max-width: 550px) {
+
+            .judul h1 {
+                font-size: 40px;
+            }
+
+            .koleksi-foto {
+                transform: scale(0.85);
+                margin-top: -30px;
+                margin-bottom: -30px;
+            }
+
+            .grid-foto {
+                grid-template-columns: 1fr;
+            }
+
+            .grid-foto img {
+                height: 350px;
+            }
+
+            .menu {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         NAVIGASI
+    ========================= -->
+
+    <nav>
+
+        <div class="logo">
+            Syafara Azra Putri Ivana ♡
+        </div>
+
+        <div class="menu">
+            <a href="#tentang">Tentang Saya</a>
+            <a href="#galeri">Galeri</a>
+            <a href="#kontak">Kontak</a>
+        </div>
+
+    </nav>
+
+
+
+    <!-- =========================
+         TENTANG SAYA
+    ========================= -->
+
+    <section class="tentang" id="tentang">
+
+        <div class="judul">
+
+            <h1>Tentang Saya</h1>
+
+            <p>
+                sedikit cerita tentang Syafara ♡
+            </p>
+
+        </div>
+
+
+
+        <div class="isi-tentang">
+
+
+            <!-- FOTO POLAROID -->
+
+            <div class="koleksi-foto">
+
+                <div class="polaroid foto-satu">
+
+                    <img
+                        src="foto1.jpg"
+                        alt="Foto Syafara"
+                    >
+
+                </div>
+
+
+                <div class="polaroid foto-dua">
+
+                    <img
+                        src="foto2.jpg"
+                        alt="Foto Syafara"
+                    >
+
+                </div>
+
+
+                <div class="polaroid foto-tiga">
+
+                    <img
+                        src="foto3.jpg"
+                        alt="Foto Syafara"
+                    >
+
+                </div>
+
+            </div>
+
+
+
+            <!-- TEKS -->
+
+            <div class="deskripsi">
+
+                <h2>
+                    Halo, aku Syafara! ♡
+                </h2>
+
+
+                <p>
+                    Nama lengkapku adalah
+                    <strong>Syafara Azra Putri Ivana</strong>,
+                    tetapi aku lebih sering dipanggil Syafara.
+                    Aku adalah seorang pelajar di
+                    <strong>SMAN 19 Bandung</strong>.
+                </p>
+
+
+                <p>
+                    Aku termasuk orang yang ramah dan senang
+                    bertemu dengan orang baru. Salah satu hal
+                    yang paling aku sukai dari sekolah adalah
+                    bisa punya banyak teman dan membuat berbagai
+                    kenangan bersama mereka.
+                </p>
+
+
+                <p>
+                    Aku masih terus mencari tahu tentang hal-hal
+                    yang aku sukai dan kemampuan yang ingin aku
+                    kembangkan. Aku suka matematika, terutama
+                    ketika aku sudah memahami cara mengerjakannya.
+                </p>
+
+
+                <p>
+                    Sejak masuk SMA, aku juga belajar untuk lebih
+                    bisa mengatur waktu dan uang jajan. Bagiku,
+                    perubahan kecil seperti itu juga merupakan
+                    bagian dari proses untuk menjadi lebih dewasa.
+                </p>
+
+
+
+                <!-- INFORMASI -->
+
+                <div class="informasi">
+
+
+                    <div class="kotak">
+
+                        🏫
+                        <strong>Sekolah</strong>
+
+                        <br>
+
+                        SMAN 19 Bandung
+
+                    </div>
+
+
+                    <div class="kotak">
+
+                        📚
+                        <strong>Pelajaran yang disukai</strong>
+
+                        <br>
+
+                        Matematika
+
+                    </div>
+
+
+                    <div class="kotak">
+
+                        🩺
+                        <strong>Cita-cita</strong>
+
+                        <br>
+
+                        Kuliah Keperawatan
+
+                    </div>
+
+
+                    <div class="kotak">
+
+                        💤
+                        <strong>Hal yang disukai</strong>
+
+                        <br>
+
+                        Tidur
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- KUTIPAN -->
+
+        <div class="kutipan">
+
+            “Semoga suatu hari nanti aku bisa
+            membanggakan orang tua, menjadi orang sukses,
+            dan tidak salah memilih pasangan.”
+
+            <span>
+                — Syafara Azra Putri Ivana
+            </span>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         GALERI FOTO
+    ========================= -->
+
+    <section class="galeri" id="galeri">
+
+        <div class="galeri-judul">
+
+            <h2>Galeri Saya</h2>
+
+            <p>
+                beberapa foto dan momen yang aku simpan ♡
+            </p>
+
+        </div>
+
+
+        <div class="grid-foto">
+
+            <img
+                src="foto4.jpg"
+                alt="Momen Syafara"
+            >
+
+            <img
+                src="foto5.jpg"
+                alt="Momen Syafara"
+            >
+
+            <img
+                src="foto6.jpg"
+                alt="Momen Syafara"
+            >
+
+            <img
+                src="foto7.jpg"
+                alt="Momen Syafara"
+            >
+
+            <img
+                src="foto8.jpg"
+                alt="Momen Syafara"
+            >
+
+            <img
+                src="foto9.jpg"
+                alt="Momen Syafara"
+            >
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         KONTAK
+    ========================= -->
+
+    <section
+        id="kontak"
+        style="
+            padding: 80px 8%;
+            text-align: center;
+            background-color: #fff8f5;
+        "
+    >
+
+        <h2
+            style="
+                font-family: Georgia, serif;
+                font-size: 40px;
+                color: #b96872;
+                margin-bottom: 15px;
+            "
+        >
+            Mari Berkenalan ♡
+        </h2>
+
+        <p style="color: #765e5d;">
+            Terima kasih sudah mengunjungi portofolioku.
+        </p>
+
+    </section>
+
+
+
+    <!-- FOOTER -->
+
+    <footer id="kontak">
+
+        © 2026 Syafara Azra Putri Ivana · Dibuat dengan ♡
+
+    </footer>
+
+
+</body>
+</html>
